@@ -1,0 +1,1 @@
+Usa únicamente assets propios o con licencia. No se incluyen assets oficiales.

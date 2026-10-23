@@ -33,6 +33,17 @@ La aplicación se ejecuta en la propia computadora. FastAPI/Uvicorn ofrece la in
 - [Compilación para Windows](#compilación-para-windows)
 - [Informe final del trabajo](#informe-final-del-trabajo)
 - [Privacidad, licencias y aviso legal](#privacidad-licencias-y-aviso-legal)
+- [Tohka](#Tohka)
+- [Yoshino](#Yoshino)
+- [Kurumi](#Kurumi)
+- [Kotori](#Kotori)
+- [Miku](#Miku)
+- [Natsumi](#Natsumi)
+- [Origami](#Origami)
+- [Nia](#Nia)
+- [Mukuro](#Mukuro)
+- [Rinne](#Rinne)
+- [Canciones-del-repositorio](#Canciones-del-repositorio)
 
 ## Consignas y objetivos del trabajo
 

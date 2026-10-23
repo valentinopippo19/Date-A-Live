@@ -100,6 +100,8 @@ La arena se abre en una pantalla independiente del chat. Permite elegir personaj
 
 Los resultados dependen de las estadísticas y de las reglas implementadas; esta función es un sistema de combate inspirado en RPG, no una simulación oficial del canon de la serie.
 
+<img width="1536" height="1024" alt="Instalador Date A Live AI" src="https://github.com/user-attachments/assets/19691af6-ae26-49bd-b036-6e4e0c34bd31" />
+
 ## Personajes
 
 Los datos se cargan desde `data/characters/characters.json`. La versión incluye los siguientes diez personajes:
@@ -475,8 +477,76 @@ No publiques archivos `.env`, bases de datos personales, conversaciones privadas
 
 Proyecto personal / trabajo práctico.
 
-# Tohka Yatogami
+# Tohka
 
 <img width="1366" height="768" alt="Tohka" src="https://github.com/user-attachments/assets/97c24300-057d-488c-942e-883ea9a71743" />
 
 https://github.com/user-attachments/assets/5af09e28-ea62-42ca-8459-f23ee7079d20
+
+# Yoshino
+
+<img width="474" height="266" alt="OIP" src="https://github.com/user-attachments/assets/d4eff442-8d49-4285-9e24-e17f59d8f81d" />
+
+https://github.com/user-attachments/assets/2bb0d0da-5299-41e2-8d8d-2942563adf42
+
+# Kurumi
+
+<img width="474" height="266" alt="OIP (1)" src="https://github.com/user-attachments/assets/cdbef7c4-2822-4ff9-a42d-7dd6cd35b74a" />
+
+https://github.com/user-attachments/assets/84205e85-287f-4d85-9146-f1b3155550c9
+
+# Kotori
+
+<img width="474" height="266" alt="OIP (2)" src="https://github.com/user-attachments/assets/7c07c3f2-7788-47b1-8067-34bf17c23f93" />
+
+https://github.com/user-attachments/assets/eebd144c-26b7-404e-89bd-0176517aec40
+
+# Miku
+
+<img width="1024" height="640" alt="miku_izayoi_date_a_live_by_emilysweet20_dd9mhxd-fullview" src="https://github.com/user-attachments/assets/31ee453c-6ad0-45c9-8258-7ca481e84461" />
+
+https://github.com/user-attachments/assets/5c5e8bfd-fb69-493e-a724-b87cf05a740d
+
+# Natsumi
+
+<img width="474" height="266" alt="OIP" src="https://github.com/user-attachments/assets/c15b5dfd-67d7-4782-93df-9fc14b7ca956" />
+
+https://github.com/user-attachments/assets/9b0126de-3c57-4db3-b98d-02da4dd5e347
+
+# Origami
+
+<img width="2500" height="1235" alt="1051655" src="https://github.com/user-attachments/assets/a36e6cdd-6e07-4bcf-b678-b7319401382c" />
+
+https://github.com/user-attachments/assets/37ff785c-8a9f-49df-8d21-14eafbf81a5a
+
+# Nia
+
+<img width="474" height="266" alt="OIP (1)" src="https://github.com/user-attachments/assets/f9c84ef6-50f6-4cb6-bf44-f542499f5a31" />
+
+https://github.com/user-attachments/assets/a85b321b-86c8-4d71-9d48-a60d2d66d849
+
+# Mukuro
+
+<img width="474" height="266" alt="OIP" src="https://github.com/user-attachments/assets/f980e3dc-be4b-4ec3-b7c3-14183b4857d3" />
+
+https://github.com/user-attachments/assets/f4e1e8b0-e5d1-4875-9351-bd9ae7cb8a84
+
+# Rinne
+
+<img width="736" height="408" alt="ba96c2504b03995a3088bd118cd6c169" src="https://github.com/user-attachments/assets/ecf2940f-7cd5-4142-9dd4-460d04cecbfb" />
+
+https://github.com/user-attachments/assets/44cba572-6d6a-443b-be0e-876f6e81122a
+
+# Canciones del repositorio
+
+https://github.com/user-attachments/assets/330c4400-7884-4209-9253-fdde251e3dfb
+
+https://github.com/user-attachments/assets/5839a936-3f78-41ca-9f2d-4929ab243ab1
+
+https://github.com/user-attachments/assets/a9ab5afe-c5d9-440a-8a38-e5aceac4a308
+
+https://github.com/user-attachments/assets/e24d22c7-3ae2-4a3e-911d-2b8ea581a5ce
+
+https://github.com/user-attachments/assets/8740f071-fcbf-4804-8eae-d37a3a943dc9
+
+https://github.com/user-attachments/assets/ee2d954e-d8ff-4eb4-ac14-92f873c2c839

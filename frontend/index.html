@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080916">
+  <title>Date A Live AI — Comienza nuestra cita</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <!-- Landing: no video here. The user explicitly starts the experience. -->
+  <section id="landing" class="site-shell">
+    <nav class="top-nav">
+      <div class="brand-lockup">
+        <div class="brand-mark">✦</div>
+        <div><strong>DATE A LIVE AI</strong><span>SIMULADOR DE CITAS · OFFLINE</span></div>
+      </div>
+      <div class="nav-links">
+        <button class="nav-link active" data-scroll="hero">Inicio</button>
+        <button class="nav-link" data-scroll="spiritsPreview">Espíritus</button>
+        <button class="nav-link" data-scroll="features">Funciones</button>
+      </div>
+    </nav>
+
+    <main>
+      <section id="hero" class="hero-section">
+        <div class="hero-copy">
+          <div class="eyebrow">PROYECTO INTERACTIVO · 100% LOCAL</div>
+          <h1>Date A Live <em>AI</em></h1>
+          <p class="hero-slogan">Comienza nuestra cita</p>
+          <p class="hero-description">Conoce a las Espíritus, mira sus presentaciones, conversa con ellas y vive tus propias citas dentro de una experiencia inspirada en Date A Live.</p>
+          <div class="hero-actions">
+            <button id="startExperience" class="primary-cta"><span>▶</span> Comenzar</button>
+            <button id="openSiteGuide" class="secondary">ℹ Cómo funciona</button>
+          </div>
+          <div class="status-row"><span class="status-dot"></span> Servidor local listo · Sin servicios remotos</div>
+        </div>
+        <div class="hero-art" aria-label="Presentación visual de Date A Live AI">
+          <div class="orb orb-a"></div><div class="orb orb-b"></div>
+          <div class="hero-frame">
+            <img src="/media/Espiritus/tohka.jpg" alt="Espíritu protagonista">
+            <div class="hero-frame-glow"></div>
+            <div class="hero-caption"><span>SPIRIT DATABASE</span><strong>10 PERSONAJES</strong></div>
+          </div>
+          <div class="floating-card card-top"><b>VOICE</b><span>Respuesta con voz</span></div>
+          <div class="floating-card card-bottom"><b>AI CHAT</b><span>Conversación local</span></div>
+        </div>
+      </section>
+
+      <section id="spiritsPreview" class="site-section">
+        <div class="section-heading"><div><div class="eyebrow">SPIRIT DATABASE</div><h2>Ellas están esperando</h2></div><span>Seleccioná una para comenzar.</span></div>
+        <div id="landingSpiritGrid" class="mini-spirit-grid"></div>
+      </section>
+
+      <section id="features" class="site-section features-section">
+        <div class="eyebrow">EXPERIENCIA</div><h2>Más que un chat</h2>
+        <div class="feature-grid">
+          <article><span>01</span><h3>Presentaciones</h3><p>Mirá el video de presentación de cada Espíritu antes de iniciar una charla.</p></article>
+          <article><span>02</span><h3>Citas</h3><p>Usá el simulador de citas y construí conversaciones persistentes en SQLite.</p></article>
+          <article><span>03</span><h3>Voz y movimiento</h3><p>Las respuestas activan animaciones y voz local cuando los modelos están disponibles.</p></article>
+          <article><span>04</span><h3>Batallas</h3><p>Simulá enfrentamientos entre Espíritus y consultá el resultado en el panel.</p></article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>Date A Live AI</span><span>Experiencia local · 127.0.0.1</span></footer>
+  </section>
+
+  <!-- Opening: only the video and a skip control. -->
+  <div id="opening" class="cinematic-overlay hidden" aria-label="Opening">
+    <video id="openingVideo" class="cinematic-video" playsinline preload="auto">
+      <source src="/media/Videos/Opening.mp4" type="video/mp4">
+    </video>
+    <div class="opening-ui"><span>DATE A LIVE AI · OPENING</span><button id="skipOpening" class="skip-button">Saltar opening <span>→</span></button></div>
+  </div>
+
+  <!-- Spirit selection / web portal. -->
+  <section id="selection" class="selection-screen hidden">
+    <header class="portal-header">
+      <div class="brand-lockup"><div class="brand-mark">✦</div><div><strong>DATE A LIVE AI</strong><span>SPIRIT DATABASE</span></div></div>
+      <div class="portal-actions"><button id="selectionHome" class="secondary">⌂ Inicio</button><button id="exitFromSelection" class="secondary">⏻ Salir</button></div>
+    </header>
+    <div class="selection-hero"><div><div class="eyebrow">SELECCIÓN DE ESPÍRITU</div><h1>¿Con quién comienza tu cita?</h1><p>Elegí una Espíritu para conocer su perfil, ver su presentación y entrar al simulador de chat.</p></div><div class="selection-badge">10<br><small>ESPÍRITUS</small></div></div>
+    <div id="characterGrid" class="character-grid"></div>
+  </section>
+
+  <!-- Página individual de cada personaje: fotos y videos completos. -->
+  <section id="characterDetail" class="character-detail-page hidden"></section>
+
+  <div id="mediaLightbox" class="media-lightbox hidden" onclick="closeMediaLightbox()">
+    <div id="mediaLightboxContent" class="media-lightbox-content" onclick="event.stopPropagation()"></div>
+    <button class="lightbox-close" aria-label="Cerrar" onclick="closeMediaLightbox()">×</button>
+  </div>
+
+  <!-- Main simulator. -->
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="sidebar-brand"><div class="brand-mark">✦</div><div><strong>DAL AI</strong><small>SIMULADOR OFFLINE</small></div></div>
+      <button id="backSelection" class="sidebar-button secondary">← Espíritus</button>
+      <button id="new" class="sidebar-button primary-small">＋ Nueva charla</button>
+      <div class="side-label">PERSONAJES</div><div id="chars"></div>
+      <div class="side-label">MIS CHARLAS</div><div id="chats"></div>
+      <div class="side-tools"><button id="battle" class="secondary">⚔ Batalla</button><button id="sys" class="secondary">⚙ Sistema</button></div>
+      <button id="finish" class="finish-btn">♥ Terminar cita</button>
+    </aside>
+
+    <main class="chat-shell">
+      <header class="chat-header">
+        <div class="character-heading"><img id="miniImage" alt="" class="mini-image hidden"><div><b id="name">Selecciona personaje</b><small id="title">Elige una Espíritu para comenzar</small></div></div>
+        <div class="header-actions"><button id="presentation" class="secondary">▶ Presentación</button><button id="date" class="date-button">♥ Cita</button></div>
+      </header>
+      <section id="stage" class="character-stage">
+        <div class="stage-label">CONEXIÓN ACTIVA</div>
+        <div id="avatarWrap" class="avatar-wrap idle"><img id="avatar" src="" alt="Personaje" class="character-avatar hidden"><div id="avatarFallback">✦</div><div id="motionAura"></div></div>
+        <div id="emotion">Selecciona un Espíritu para comenzar.</div>
+      </section>
+      <section id="msgs" class="messages"></section>
+      <footer class="chat-composer"><input id="input" autocomplete="off" placeholder="Escribe un mensaje..."><button id="send" class="send-button">Enviar <span>➤</span></button></footer>
+    </main>
+  </div>
+
+  <section id="battleScreen" class="battle-screen hidden" aria-label="Arena de batallas">
+    <header class="battle-screen-header">
+      <div class="brand-lockup"><div class="brand-mark">⚔</div><div><strong>DATE A LIVE AI</strong><span>ARENA DE ESPÍRITUS · RPG</span></div></div>
+      <div class="battle-screen-status"><span class="status-dot"></span> Combate local · Sin servicios remotos</div>
+    </header>
+    <main id="battleContent" class="battle-screen-content"></main>
+  </section>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div class="panel"><button id="close" class="close" aria-label="Cerrar">×</button><div id="content"></div></div></div>
+
+  <div id="ending" class="cinematic-overlay hidden">
+    <video id="endingVideo" class="cinematic-video" playsinline preload="auto"><source src="/media/Videos/Ending.mp4" type="video/mp4"></video>
+    <div class="cinematic-shade"></div>
+    <div class="ending-card"><div class="eyebrow">DATE A LIVE AI</div><h1>Date A Live AI</h1><p>Vuelve con nosotras</p><button id="closeExperience">↩ Volver al inicio</button></div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

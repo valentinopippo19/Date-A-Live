@@ -1,0 +1,16 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Date A Live AI",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/desktop/launcher.py",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "console": "internalConsole",
+            "justMyCode": false
+        }
+    ]
+}

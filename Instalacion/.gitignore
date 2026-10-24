@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/app.db
+data/generated_audio/
+build/
+dist/
+Output/
+models/*
+!models/Videos/
+!models/Espiritus/
+!models/Videos/**
+!models/Espiritus/**
